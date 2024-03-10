@@ -6,7 +6,7 @@ function DogList({ data }) {
     <div className="dog-list">
       {data.map((dog) => {
         return (
-          <div className="dog">
+          <div className="dog" key={dog.id}>
             <span>
               {dog.name} - {dog.breed} - {dog.age}
             </span>
