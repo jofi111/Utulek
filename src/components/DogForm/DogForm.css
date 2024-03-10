@@ -5,3 +5,13 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.dog-form input[type="text"],
+.dog-form input[type="number"],
+.dog-form button {
+  background-color: #e0c110;
+}
+
+.dog-form button {
+  background-color: rgb(52, 165, 42);
+}
