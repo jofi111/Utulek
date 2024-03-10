@@ -1,13 +1,14 @@
 import React from "react";
+import "./DogList.css";
 
 function DogList({ data }) {
   return (
-    <div>
-      {data.map((item) => {
+    <div className="dog-list">
+      {data.map((dog) => {
         return (
-          <div>
+          <div className="dog">
             <span>
-              {item.name} / {item.breed} / {item.age}
+              {dog.name} - {dog.breed} - {dog.age}
             </span>
           </div>
         );

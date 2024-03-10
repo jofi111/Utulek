@@ -1,0 +1,18 @@
+.dog-list {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.dog {
+  display: flex;
+  height: 45px;
+  padding: 0 15px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #c0ac3d;
+}
+
+.dog:nth-child(even) {
+  background-color: #e0c110;
+}
