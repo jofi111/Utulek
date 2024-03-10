@@ -3,6 +3,7 @@ import rawData from "./dogsData.json";
 import PageContainer from "./components/PageContainer/PageContainer";
 import DogList from "./components/DogList/DogList";
 import DogForm from "./components/DogForm/DogForm";
+import Toggler from "./components/Toggler/Toggler";
 
 function App() {
   const [listOfDogs, setListOfDogs] = useState(rawData.dogs);
@@ -63,6 +64,7 @@ function App() {
   return (
     <div className="App">
       <PageContainer>
+        <Toggler />
         <DogList data={listOfDogs} onDelete={handleDelete} />
         <DogForm
           data={newDog}
