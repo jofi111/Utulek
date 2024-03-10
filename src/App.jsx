@@ -61,17 +61,51 @@ function App() {
     setListOfDogs(listOfDogs.filter((dog) => dog.id !== idToDelete));
   };
 
+  const [activeTab, setActiveTab] = useState(1);
+  const handleChoose = (source) => {
+    switch (source) {
+      case "list-of-dogs": {
+        setActiveTab(1);
+        break;
+      }
+      case "shelter-storage": {
+        setActiveTab(2);
+        break;
+      }
+      default:
+        break;
+    }
+  };
+
+  const [shelterStorage, setShelterStorage] = useState({
+    food: 35,
+    vaccines: 15,
+    pills: 20,
+  });
+
   return (
     <div className="App">
       <PageContainer>
-        <Toggler />
-        <DogList data={listOfDogs} onDelete={handleDelete} />
-        <DogForm
-          data={newDog}
-          validation={valid}
-          onChange={handleChange}
-          onAdd={handleAdd}
-        />
+        <Toggler active={activeTab} onChoose={handleChoose} />
+        {activeTab === 1 && (
+          <>
+            <DogList data={listOfDogs} onDelete={handleDelete} />
+            <DogForm
+              data={newDog}
+              validation={valid}
+              onChange={handleChange}
+              onAdd={handleAdd}
+            />
+          </> //prazdny tag lze misto divu
+        )}
+        {activeTab === 2 && (
+          <>
+            <h3>Current stock</h3>
+            <p>dog food: {shelterStorage.food} kgs</p>
+            <p>vaccines: {shelterStorage.vaccines} pcs</p>
+            <p>pills: {shelterStorage.pills} pkgs</p>
+          </>
+        )}
       </PageContainer>
     </div>
   );

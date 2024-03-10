@@ -16,8 +16,9 @@
   font-size: 20px;
   cursor: pointer;
   background-color: transparent;
+  border-radius: 5px;
 }
 
 .active {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(221, 16, 16, 0.164);
 }

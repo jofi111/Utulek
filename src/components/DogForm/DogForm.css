@@ -38,4 +38,5 @@
 
 .dog-form button {
   background-color: rgb(52, 165, 42);
+  border-radius: 5px;
 }
