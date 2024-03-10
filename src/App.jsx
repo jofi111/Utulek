@@ -26,8 +26,9 @@ function App() {
       setValid(false);
     } else if (dog.breed.trim().length === 0) {
       setValid(false);
+    } else {
+      setValid(true);
     }
-    setValid(true);
   };
 
   const handleChange = (event) => {
