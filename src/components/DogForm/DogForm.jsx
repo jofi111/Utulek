@@ -1,30 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DogForm.css";
 
-function DogForm({ data }) {
+function DogForm({ data, onChange }) {
+  const [showHint, setShowHint] = useState(false);
+
   return (
-    <div className="dog-form">
-      <input
-        type="text"
-        placeholder="name of the dog"
-        name="name"
-        value={data.name}
-      />
-      <input
-        type="text"
-        placeholder="breed of the dog"
-        name="breed"
-        value={data.breed}
-      />
-      <input
-        type="number"
-        placeholder="age of the dog (0-32)"
-        name="age"
-        min="0"
-        max="32"
-        value={data.age}
-      />
-      <button>Register the dog</button>
+    <div className="dog-form-container">
+      <div className="dog-form">
+        <input
+          type="text"
+          placeholder="name of the dog"
+          name="name"
+          value={data.name}
+          onChange={onChange}
+        />
+        <input
+          type="text"
+          placeholder="breed of the dog"
+          name="breed"
+          value={data.breed}
+          onChange={onChange}
+        />
+        <div className="age-container">
+          <input
+            type="number"
+            placeholder="age"
+            name="age"
+            min="0"
+            max="32"
+            value={data.age}
+            onChange={onChange}
+            onMouseEnter={() => setShowHint(true)}
+            onMouseLeave={() => setShowHint(false)}
+          />
+          {showHint && (
+            <div className="hint-bubble">Age must be 0-32 years</div>
+          )}
+        </div>
+        <button>Register</button>
+      </div>
     </div>
   );
 }
