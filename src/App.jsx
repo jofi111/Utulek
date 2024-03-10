@@ -33,10 +33,13 @@ function App() {
 
   const handleChange = (event) => {
     const updatedDog = { ...newDog, [event.target.name]: event.target.value };
-    setNewDog(updatedDog);
     validateData(updatedDog);
+    setNewDog(updatedDog);
   };
 
+  const handleAdd = () => {
+    null;
+  };
   // useEffect(() => {
   //   console.log(listOfDogs);
   // }, [listOfDogs]);
@@ -45,7 +48,12 @@ function App() {
     <div className="App">
       <PageContainer>
         <DogList data={listOfDogs} />
-        <DogForm data={newDog} validation={valid} onChange={handleChange} />
+        <DogForm
+          data={newDog}
+          validation={valid}
+          onChange={handleChange}
+          onAdd={handleAdd}
+        />
       </PageContainer>
     </div>
   );

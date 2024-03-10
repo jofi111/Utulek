@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./DogForm.css";
 
-function DogForm({ data, onChange, validation }) {
+function DogForm({ data, onChange, validation, onAdd }) {
   const [showHint, setShowHint] = useState(false);
 
   return (
@@ -37,7 +37,9 @@ function DogForm({ data, onChange, validation }) {
             <div className="hint-bubble">Age must be 0-32 years</div>
           )}
         </div>
-        <button disabled={!validation}>Register</button>
+        <button disabled={!validation} onClick={onAdd}>
+          Register
+        </button>
       </div>
     </div>
   );

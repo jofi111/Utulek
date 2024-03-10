@@ -1,34 +1,94 @@
 {
-    "dogs": [
-        {
-            "id": 1,
-            "name": "Rex",
-            "breed": "smeták",
-            "age": 7
-        },
-        {
-            "id": 2,
-            "name": "Joy",
-            "breed": "jezevčík",
-            "age": 5
-        },
-        {
-            "id": 3,
-            "name": "Hvězdička",
-            "breed": "vořech",
-            "age": 11
-        },
-        {
-            "id": 4,
-            "name": "Bibi",
-            "breed": "kokršpaněl",
-            "age": 2
-        },
-        {
-            "id": 5,
-            "name": "Jinx",
-            "breed": "bullteriér",
-            "age": 3
-        }
-    ]
+  "dogs": [
+    {
+      "id": 1,
+      "name": "Rex",
+      "breed": "broom",
+      "age": 7
+    },
+    {
+      "id": 2,
+      "name": "Joy",
+      "breed": "dachshund",
+      "age": 5
+    },
+    {
+      "id": 3,
+      "name": "Star",
+      "breed": "squirrel",
+      "age": 11
+    },
+    {
+      "id": 4,
+      "name": "Bibi",
+      "breed": "cocker spaniel",
+      "age": 2
+    },
+    {
+      "id": 5,
+      "name": "Jinx",
+      "breed": "bull terrier",
+      "age": 3
+    },
+    {
+      "id": 6,
+      "name": "Max",
+      "breed": "golden retriever",
+      "age": 4
+    },
+    {
+      "id": 7,
+      "name": "Luna",
+      "breed": "labrador retriever",
+      "age": 6
+    },
+    {
+      "id": 8,
+      "name": "Charlie",
+      "breed": "poodle",
+      "age": 1
+    },
+    {
+      "id": 9,
+      "name": "Bella",
+      "breed": "german shepherd",
+      "age": 8
+    },
+    {
+      "id": 10,
+      "name": "Duke",
+      "breed": "boxer",
+      "age": 9
+    },
+    {
+      "id": 11,
+      "name": "Rocky",
+      "breed": "rottweiler",
+      "age": 4
+    },
+    {
+      "id": 12,
+      "name": "Molly",
+      "breed": "beagle",
+      "age": 5
+    },
+    {
+      "id": 13,
+      "name": "Cooper",
+      "breed": "husky",
+      "age": 3
+    },
+    {
+      "id": 14,
+      "name": "Bailey",
+      "breed": "border collie",
+      "age": 7
+    },
+    {
+      "id": 15,
+      "name": "Sophie",
+      "breed": "shih tzu",
+      "age": 2
+    }
+  ]
 }
