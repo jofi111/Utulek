@@ -38,16 +38,32 @@ function App() {
   };
 
   const handleAdd = () => {
-    null;
+    setListOfDogs((listOfDogs) => {
+      return [...listOfDogs, newDog];
+    });
+    const newDogId = newDog.id + 1;
+    const updatedDog = {
+      id: newDogId,
+      name: "",
+      breed: "",
+      age: "",
+    };
+    setNewDog(updatedDog);
+    validateData(updatedDog);
   };
+
   // useEffect(() => {
   //   console.log(listOfDogs);
   // }, [listOfDogs]);
 
+  const handleDelete = (idToDelete) => {
+    setListOfDogs(listOfDogs.filter((dog) => dog.id !== idToDelete));
+  };
+
   return (
     <div className="App">
       <PageContainer>
-        <DogList data={listOfDogs} />
+        <DogList data={listOfDogs} onDelete={handleDelete} />
         <DogForm
           data={newDog}
           validation={valid}
