@@ -88,7 +88,7 @@ function App() {
   };
 
   const [shelterStorage, setShelterStorage] = useState({
-    food: 65,
+    food: 95,
     vaccines: 20,
     pills: 40,
   });
