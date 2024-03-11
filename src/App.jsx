@@ -4,6 +4,7 @@ import PageContainer from "./components/PageContainer/PageContainer";
 import DogList from "./components/DogList/DogList";
 import DogForm from "./components/DogForm/DogForm";
 import Toggler from "./components/Toggler/Toggler";
+import ShelterForm from "./components/ShelterForm/ShelterForm";
 
 function App() {
   const [listOfDogs, setListOfDogs] = useState(rawData.dogs);
@@ -104,6 +105,7 @@ function App() {
             <p>dog food: {shelterStorage.food} kgs</p>
             <p>vaccines: {shelterStorage.vaccines} pcs</p>
             <p>pills: {shelterStorage.pills} pkgs</p>
+            <ShelterForm />
           </>
         )}
       </PageContainer>
