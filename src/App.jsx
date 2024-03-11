@@ -80,9 +80,9 @@ function App() {
 
   const handleAddToStorage = (temp) => {
     const temporaryStorage = {
-      food: shelterStorage.food + parseInt(temp.food),
-      vaccine: shelterStorage.vaccine + parseInt(temp.vaccine),
-      pills: shelterStorage.pills + parseInt(temp.pills),
+      food: shelterStorage.food + temp.food,
+      vaccines: shelterStorage.vaccines + temp.vaccine,
+      pills: shelterStorage.pills + temp.pills,
     };
     setShelterStorage(temporaryStorage);
   };

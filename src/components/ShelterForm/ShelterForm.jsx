@@ -8,7 +8,7 @@ function ShelterForm({ onAdd }) {
     pills: "",
   });
 
-  // const [disable, setDisable] = useState(true);
+  const [disable, setDisable] = useState(true);
 
   const handleStorage = (event) => {
     // setTempStorage({
@@ -57,27 +57,26 @@ function ShelterForm({ onAdd }) {
     console.log(tempStorage);
   }, [tempStorage]);
 
-  //   useEffect(() => {
-  //     const temp =
-  //       (tempStorage.food === "" || parseInt(tempStorage.food) === 0) &&
-  //       (tempStorage.vaccine === "" || parseInt(tempStorage.vaccine) === 0) &&
-  //       (tempStorage.pills === "" || parseInt(tempStorage.pills) === 0);
-  //     setDisable(temp);
-  //   }, [tempStorage]);
+  useEffect(() => {
+    const temp =
+      (tempStorage.food === "" || parseInt(tempStorage.food) === 0) &&
+      (tempStorage.vaccine === "" || parseInt(tempStorage.vaccine) === 0) &&
+      (tempStorage.pills === "" || parseInt(tempStorage.pills) === 0);
+    setDisable(temp);
+  }, [tempStorage]);
 
   const handleClick = () => {
-    //   const storageToSend = {
-    //     food: tempStorage.food === "" ? 0 : parseInt(tempStorage.food),
-    //     vaccine: tempStorage.vaccine === "" ? 0 : parseInt(tempStorage.vaccine),
-    //     pills: tempStorage.pills === "" ? 0 : parseInt(tempStorage.pills),
-    //   };
-    //   onAdd(storageToSend);
-    //   setTempStorage({
-    //     food: "",
-    //     vaccine: "",
-    //     pills: "",
-    //   });
-    onAdd(tempStorage);
+    const storageToSend = {
+      food: tempStorage.food === "" ? 0 : parseInt(tempStorage.food),
+      vaccine: tempStorage.vaccine === "" ? 0 : parseInt(tempStorage.vaccine),
+      pills: tempStorage.pills === "" ? 0 : parseInt(tempStorage.pills),
+    };
+    onAdd(storageToSend);
+    setTempStorage({
+      food: "",
+      vaccine: "",
+      pills: "",
+    });
   };
 
   return (
@@ -106,8 +105,9 @@ function ShelterForm({ onAdd }) {
         value={tempStorage.pills}
         onChange={handleStorage}
       />
-      {/* <button disabled={disable} onClick={handleClick}> */}
-      <button onClick={handleClick}>Add to the storage</button>
+      <button disabled={disable} onClick={handleClick}>
+        Add to the storage
+      </button>
     </div>
   );
 }
