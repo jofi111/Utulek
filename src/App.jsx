@@ -78,6 +78,10 @@ function App() {
     }
   };
 
+  const handleAddToStorage = () => {
+    null;
+  };
+
   const [shelterStorage, setShelterStorage] = useState({
     food: 35,
     vaccines: 15,
@@ -105,7 +109,7 @@ function App() {
             <p>dog food: {shelterStorage.food} kgs</p>
             <p>vaccines: {shelterStorage.vaccines} pcs</p>
             <p>pills: {shelterStorage.pills} pkgs</p>
-            <ShelterForm />
+            <ShelterForm onAdd={handleAddToStorage} />
           </>
         )}
       </PageContainer>
