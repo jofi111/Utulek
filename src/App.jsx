@@ -40,18 +40,33 @@ function App() {
   };
 
   const handleAdd = () => {
-    setListOfDogs((listOfDogs) => {
-      return [...listOfDogs, newDog];
-    });
-    const newDogId = newDog.id + 1;
-    const updatedDog = {
-      id: newDogId,
-      name: "",
-      breed: "",
-      age: "",
+    const totalRequirements = {
+      food: (listOfDogs.length + 1) * dogsRequirements.food,
+      vaccine: (listOfDogs.length + 1) * dogsRequirements.vaccine,
+      pills: (listOfDogs.length + 1) * dogsRequirements.pills,
     };
-    setNewDog(updatedDog);
-    validateData(updatedDog);
+    if (
+      totalRequirements.food <= shelterStorage.food &&
+      totalRequirements.food <= shelterStorage.vaccines &&
+      totalRequirements.food <= shelterStorage.pills
+    ) {
+      setListOfDogs((listOfDogs) => {
+        return [...listOfDogs, newDog];
+      });
+      const newDogId = newDog.id + 1;
+      const updatedDog = {
+        id: newDogId,
+        name: "",
+        breed: "",
+        age: "",
+      };
+      setNewDog(updatedDog);
+      validateData(updatedDog);
+    } else {
+      alert(
+        "Not enough supplies for adding new dog. Add more supplies to the storage!"
+      );
+    }
   };
 
   // useEffect(() => {
