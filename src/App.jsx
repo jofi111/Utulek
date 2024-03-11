@@ -42,13 +42,13 @@ function App() {
   const handleAdd = () => {
     const totalRequirements = {
       food: (listOfDogs.length + 1) * dogsRequirements.food,
-      vaccine: (listOfDogs.length + 1) * dogsRequirements.vaccine,
+      vaccine: (listOfDogs.length + 1) * dogsRequirements.vaccines,
       pills: (listOfDogs.length + 1) * dogsRequirements.pills,
     };
     if (
       totalRequirements.food <= shelterStorage.food &&
-      totalRequirements.food <= shelterStorage.vaccines &&
-      totalRequirements.food <= shelterStorage.pills
+      totalRequirements.vaccine <= shelterStorage.vaccines &&
+      totalRequirements.pills <= shelterStorage.pills
     ) {
       setListOfDogs((listOfDogs) => {
         return [...listOfDogs, newDog];
@@ -103,14 +103,14 @@ function App() {
   };
 
   const [shelterStorage, setShelterStorage] = useState({
-    food: 95,
+    food: 80,
     vaccines: 20,
     pills: 40,
   });
 
   const dogsRequirements = {
     food: 5,
-    vaccine: 1,
+    vaccines: 1,
     pills: 2,
   };
 
