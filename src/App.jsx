@@ -78,8 +78,13 @@ function App() {
     }
   };
 
-  const handleAddToStorage = () => {
-    null;
+  const handleAddToStorage = (temp) => {
+    const temporaryStorage = {
+      food: shelterStorage.food + parseInt(temp.food),
+      vaccine: shelterStorage.vaccine + parseInt(temp.vaccine),
+      pills: shelterStorage.pills + parseInt(temp.pills),
+    };
+    setShelterStorage(temporaryStorage);
   };
 
   const [shelterStorage, setShelterStorage] = useState({
