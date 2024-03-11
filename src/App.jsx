@@ -88,10 +88,16 @@ function App() {
   };
 
   const [shelterStorage, setShelterStorage] = useState({
-    food: 35,
-    vaccines: 15,
-    pills: 20,
+    food: 65,
+    vaccines: 20,
+    pills: 40,
   });
+
+  const dogsRequirements = {
+    food: 5,
+    vaccine: 1,
+    pills: 2,
+  };
 
   return (
     <div className="App">
