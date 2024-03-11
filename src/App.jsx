@@ -69,6 +69,7 @@ function App() {
     }
   };
 
+  // vypis na konzoli:
   // useEffect(() => {
   //   console.log(listOfDogs);
   // }, [listOfDogs]);

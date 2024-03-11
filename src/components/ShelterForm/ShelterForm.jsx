@@ -53,9 +53,10 @@ function ShelterForm({ onAdd }) {
     }
   };
 
-  useEffect(() => {
-    console.log(tempStorage);
-  }, [tempStorage]);
+  // vypis na konzoli:
+  // useEffect(() => {
+  //   console.log(tempStorage);
+  // }, [tempStorage]);
 
   useEffect(() => {
     const temp =
